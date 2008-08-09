@@ -11,7 +11,8 @@ WriteMakefile(
 	SIGN         => 1,
 	PL_FILES     => { },
 	PREREQ_PM    => {
-		'Test::use::ok' => 0,
+		'Sub::Exporter' => 0,
+		'Scope::Guard' => 0,
 	},
 );
 
