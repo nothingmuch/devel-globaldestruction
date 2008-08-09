@@ -8,7 +8,7 @@ use warnings;
 use vars qw($VERSION @ISA);
 
 BEGIN {
-	$VERSION = '0.01';
+	$VERSION = '0.02';
 
 	local $@;
 
