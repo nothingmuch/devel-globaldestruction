@@ -10,17 +10,14 @@ use vars qw($VERSION @ISA);
 BEGIN {
 	$VERSION = '0.02';
 
-	local $@;
 
-	eval {
-		require XSLoader;
+	if ( do { local $@; eval { require XSLoader; 1 } } ) {
 		__PACKAGE__->XSLoader::load($VERSION);
-		1;
-	} or do {
+	} else {
 		require DynaLoader;
 		push @ISA, 'DynaLoader';
 		__PACKAGE__->bootstrap($VERSION);
-	};
+	}
 }
 
 use Sub::Exporter -setup => {
